@@ -31,5 +31,17 @@ namespace PassWordLockWF
             get { return _password; }
             set { _password = value; }
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(_appname);
+            sb.Append("^");
+            sb.Append(_account);
+            sb.Append("^");
+            sb.Append(_password);
+            sb.Append("&");
+            return sb.ToString();
+        }
     }
 }

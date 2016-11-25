@@ -12,14 +12,38 @@ namespace PassWordLockWF
 {
     public partial class Form1 : Form
     {
+        FileHelper filehelper = null;
         public Form1()
         {
             InitializeComponent();
+            if (filehelper == null)
+            {
+                filehelper = new FileHelper();
+            }
         }
 
         private void btSave_Click(object sender, EventArgs e)
         {
+            objAccount obj = new objAccount();
+            obj.Account = tbAccount.Text;
+            obj.AppName = tbAppName.Text;
+            obj.Password = tbPassword.Text;
+            if (filehelper.AddFileText(obj))
+            {
+                tbAccount.Text = "";
+                tbAppName.Text = "";
+                tbPassword.Text = "";
+                lbmsg.Text = "保存成功！";
+            }
+            else
+            {
+                lbmsg.Text = "保存失败！";
+            }
+        }
 
+        private void btSelect_Click(object sender, EventArgs e)
+        {
+            FrSelect fr = new FrSelect();
         }
     }
 }

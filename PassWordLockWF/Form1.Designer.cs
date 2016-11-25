@@ -35,6 +35,8 @@
             this.tbAppName = new System.Windows.Forms.TextBox();
             this.tbAccount = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
+            this.lbmsg = new System.Windows.Forms.Label();
+            this.btSelect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,9 +59,9 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(170, 109);
+            this.btSave.Location = new System.Drawing.Point(205, 109);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(75, 23);
+            this.btSave.Size = new System.Drawing.Size(40, 23);
             this.btSave.TabIndex = 2;
             this.btSave.Text = "保存";
             this.btSave.UseVisualStyleBackColor = true;
@@ -95,11 +97,31 @@
             this.tbPassword.Size = new System.Drawing.Size(191, 21);
             this.tbPassword.TabIndex = 6;
             // 
+            // lbmsg
+            // 
+            this.lbmsg.AutoSize = true;
+            this.lbmsg.Location = new System.Drawing.Point(14, 109);
+            this.lbmsg.Name = "lbmsg";
+            this.lbmsg.Size = new System.Drawing.Size(0, 12);
+            this.lbmsg.TabIndex = 7;
+            // 
+            // btSelect
+            // 
+            this.btSelect.Location = new System.Drawing.Point(162, 109);
+            this.btSelect.Name = "btSelect";
+            this.btSelect.Size = new System.Drawing.Size(37, 23);
+            this.btSelect.TabIndex = 8;
+            this.btSelect.Text = "查看";
+            this.btSelect.UseVisualStyleBackColor = true;
+            this.btSelect.Click += new System.EventHandler(this.btSelect_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(256, 139);
+            this.Controls.Add(this.btSelect);
+            this.Controls.Add(this.lbmsg);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbAccount);
             this.Controls.Add(this.tbAppName);
@@ -123,6 +145,8 @@
         private System.Windows.Forms.TextBox tbAppName;
         private System.Windows.Forms.TextBox tbAccount;
         private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.Label lbmsg;
+        private System.Windows.Forms.Button btSelect;
     }
 }
 
