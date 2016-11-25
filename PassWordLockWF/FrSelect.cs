@@ -12,9 +12,27 @@ namespace PassWordLockWF
 {
     public partial class FrSelect : Form
     {
+        FileHelper filehelper = null;
         public FrSelect()
         {
+            if (filehelper == null)
+            {
+                filehelper = new FileHelper();
+            }
             InitializeComponent();
+            DataSoure();
+        }
+
+
+        private void DataSoure()
+        {
+          List<objAccount> list=filehelper.GetFileText();
+            GVSelect.DataSource = list;
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            DataSoure();
         }
     }
 }

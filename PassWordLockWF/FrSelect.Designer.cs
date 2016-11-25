@@ -30,6 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GVSelect = new System.Windows.Forms.DataGridView();
+            this.btRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GVSelect)).BeginInit();
             this.SuspendLayout();
@@ -53,11 +54,22 @@
             this.GVSelect.Size = new System.Drawing.Size(240, 177);
             this.GVSelect.TabIndex = 0;
             // 
+            // btRefresh
+            // 
+            this.btRefresh.Location = new System.Drawing.Point(220, 227);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(39, 23);
+            this.btRefresh.TabIndex = 1;
+            this.btRefresh.Text = "刷新";
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
             // FrSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(279, 262);
+            this.Controls.Add(this.btRefresh);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrSelect";
             this.Text = "FrSelect";
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView GVSelect;
+        private System.Windows.Forms.Button btRefresh;
     }
 }

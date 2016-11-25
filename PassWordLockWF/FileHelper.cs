@@ -60,11 +60,14 @@ namespace PassWordLockWF
             foreach (string item in GroupStringFather)
             {
                 string[] GroupStringSon = item.Split('^');
-                objAccount obj = new objAccount();
-                obj.Account = GroupStringSon[0];
-                obj.AppName= GroupStringSon[1];
-                obj.Password= GroupStringSon[2];
-                list.Add(obj);
+                if (GroupStringSon.Length >= 3)
+                {
+                    objAccount obj = new objAccount();
+                    obj.Account = GroupStringSon[0];
+                    obj.AppName = GroupStringSon[1];
+                    obj.Password = GroupStringSon[2];
+                    list.Add(obj);
+                }
             }
             return list;
         }

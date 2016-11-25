@@ -13,6 +13,7 @@ namespace PassWordLockWF
     public partial class Form1 : Form
     {
         FileHelper filehelper = null;
+        FrSelect fr = null;
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +44,17 @@ namespace PassWordLockWF
 
         private void btSelect_Click(object sender, EventArgs e)
         {
-            FrSelect fr = new FrSelect();
+
+            if (fr == null || fr.IsDisposed)
+            {
+                fr = new FrSelect();
+                fr.Show();
+            }
+            else
+            {
+                fr.Show();
+            }
+
         }
     }
 }
